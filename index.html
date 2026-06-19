@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 知识索引与参考</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+            background: #f5f0eb;  /* 米白基底，温暖不刺眼 */
+            color: #2d2a28;
+            line-height: 1.7;
+            padding: 2.4rem 1.2rem;
+        }
+
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            background: #fcf9f6;
+            padding: 2.8rem 2.4rem;
+            border-radius: 18px;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+            transition: padding 0.2s;
+        }
+
+        /* 标题系统：温柔但有层次 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #3b3531;
+            border-bottom: 1px solid #ece3db;
+            padding-bottom: 0.65rem;
+            margin-bottom: 1.4rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-top: 2.4rem;
+            margin-bottom: 1rem;
+            color: #4d433e;
+            padding-left: 0.2rem;
+            border-left: 4px solid #c7b6a9;
+            padding-left: 0.8rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 1.6rem 0 0.5rem;
+            color: #5c5049;
+        }
+
+        p {
+            margin: 0.8rem 0;
+            text-align: justify;
+        }
+
+        /* 引用块——柔和提示 */
+        .insight {
+            background: #efe9e3;
+            border-left: 5px solid #b7a493;
+            padding: 1rem 1.6rem;
+            margin: 1.6rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.96rem;
+            color: #3c3632;
+        }
+
+        .insight strong {
+            font-weight: 600;
+            color: #4d3e35;
+        }
+
+        /* 目录感网格卡片——知识库入口风格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin: 1.6rem 0;
+        }
+
+        .card-item {
+            background: #faf7f3;
+            border: 1px solid #e6ddd4;
+            padding: 1.2rem 1rem;
+            border-radius: 12px;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .card-item:hover {
+            border-color: #c4b1a1;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+        }
+
+        .card-item h4 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #4f423b;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-item p {
+            font-size: 0.9rem;
+            margin: 0.2rem 0 0;
+            color: #5b514b;
+        }
+
+        /* 场景搭配——左右双列 */
+        .scene-pair {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        .scene-block {
+            flex: 1 1 180px;
+            background: #faf5f0;
+            padding: 1rem 1.2rem;
+            border-radius: 12px;
+        }
+
+        .scene-block h4 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4d3f38;
+            border-bottom: 1px dashed #dacec2;
+            padding-bottom: 0.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 分隔线 */
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #e2d7cd, transparent);
+            margin: 2.4rem 0 1.2rem;
+        }
+
+        /* 内联链接自然融入句子 */
+        .inline-link {
+            color: #7c6859;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 0.5px;
+            text-decoration-color: #b7a597;
+            font-weight: 400;
+            transition: color 0.15s, text-decoration-color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #4d3b30;
+            text-decoration-color: #4d3b30;
+        }
+
+        /* 小提示（温和语气） */
+        .note-sign {
+            font-size: 0.88rem;
+            background: #ede7e0;
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            display: inline-block;
+            color: #4a423d;
+        }
+
+        /* 响应式 */
+        @media (max-width: 520px) {
+            body { padding: 1.2rem 0.8rem; }
+            .page { padding: 1.6rem 1rem; }
+            h1 { font-size: 1.6rem; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+
+        /* faq摘要样式 */
+        .faq-mini {
+            margin-top: 1.2rem;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            margin-top: 1rem;
+            margin-bottom: 0.2rem;
+            color: #3b322d;
+        }
+
+        .faq-a {
+            margin-left: 1rem;
+            padding-left: 0.4rem;
+            border-left: 2px solid #dacfc5;
+            color: #4d443e;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <h1>📖 乐鱼体育 · 查询与对照手册</h1>
+
+        <p style="font-size: 1.05rem; margin-bottom: 0.2rem;">
+            这是一份面向日常参考与延伸阅读的知识索引页。不追逐时效热点，只梳理基础结构、常见查询场景，以及值得留意的细节。内容涉及体育信息浏览、兴趣延伸与背景了解，适合作为随手查阅的起点。
+        </p>
+
+        <!-- 说明区 / 背景 -->
+        <h2>一、信息说明与背景</h2>
+        <p>在体育相关内容的浏览中，我们时常需要快速定位到某一类信息，或对规则、术语、赛事沿革做简单对照。<a href="https://zh-portal-leyu.com.cn" class="inline-link">乐鱼体育</a>作为综合体育资讯渠道，覆盖了常见联赛、俱乐部动态及数据概览，可供爱好者按需查找。本页围绕知识库的使用习惯，整理出几个实用的参考单元。</p>
+        <p>需要注意的是，所有信息应以官方或实时页面为准，这里只做概念提示与结构展示。</p>
+
+        <!-- 目录感布局：四个卡片 -->
+        <h2>二、知识库入口 · 常用目录</h2>
+        <div class="card-grid">
+            <div class="card-item">
+                <h4>🏅 联赛速览</h4>
+                <p>五大联赛、亚冠、解放者杯等基础信息与赛季节点。</p>
+            </div>
+            <div class="card-item">
+                <h4>📋 规则对照</h4>
+                <p>越位、换人限额、加时条款……常见规则简明对比。</p>
+            </div>
+            <div class="card-item">
+                <h4>📅 赛季时间轴</h4>
+                <p>转会窗、预选赛、决赛阶段的大致日期参考。</p>
+            </div>
+            <div class="card-item">
+                <h4>🔖 术语延伸</h4>
+                <p>从“高位逼抢”到“预期进球”，概念扩展阅读。</p>
+            </div>
+        </div>
+
+        <!-- 提示区：引用块 -->
+        <div class="insight">
+            <strong>💡 查阅提示：</strong> 如果想了解具体球队的近期阵容或赛程，可直接在站内通过名称或缩写进行搜索。部分历史数据可能需要结合多个页面交叉验证，建议收藏常用分类页以便快速返回。
+        </div>
+
+        <!-- 场景：日常查询与对照 -->
+        <h2>三、日常查询与延伸阅读场景</h2>
+        <div class="scene-pair">
+            <div class="scene-block">
+                <h4>📌 场景A · 对照</h4>
+                <p>同时查看两支球队的过往交锋记录、主客场战绩与近期走势，适合赛前准备或兴趣分析。在<a href="https://zh-portal-leyu.com.cn" class="inline-link">乐鱼体育</a>的球队页面可以快速切换对比视图。</p>
+            </div>
+            <div class="scene-block">
+                <h4>📌 场景B · 延伸</h4>
+                <p>看到一条战术分析后，想了解相关术语背景或同类案例。利用内部搜索或标签聚合，能顺藤摸瓜读到更多背景内容。</p>
+            </div>
+        </div>
+        <p style="margin-top: 0.4rem;">两个场景都强调“从已知出发，自然拓展”，不依赖外部跳转，在站内即可完成大部分信息串联。</p>
+
+        <!-- 相关信息区：FAQ摘要式 -->
+        <h2>四、相关信息 · 常见问题摘要</h2>
+        <div class="faq-mini">
+            <div class="faq-q">Q：如何快速找到特定联赛的积分榜？</div>
+            <div class="faq-a">多数门户在首页或“联赛”栏目下设有入口，也可直接搜索联赛名称。注意部分赛季中途数据更新可能存在短暂延迟。</div>
+
+            <div class="faq-q">Q：比赛回放与集锦一般在哪里查看？</div>
+            <div class="faq-a">通常在赛程详情页或视频专区，部分版权内容会有区域限制，建议查阅页面附注说明。通过关键词+日期组合搜索会更精确。</div>
+
+            <div class="faq-q">Q：想了解冷门联赛或青年赛事的信息量如何？</div>
+            <div class="faq-a">覆盖面因平台而异，相对小众的赛事可能只有简讯或比分，深度数据较少。可以尝试在站内搜索赛事缩写或主办方名称。</div>
+        </div>
+
+        <!-- 引语 + 温和提醒 -->
+        <hr>
+        <p style="font-size: 0.94rem; color: #5d524b;">
+            <span class="note-sign">📎 知识库迭代笔记</span> 
+            —— 本页结构偏向目录与参考引导，不代替具体数据页面。建议将常用分类页加入浏览器书签，后续查阅会更顺手。
+        </p>
+        <p style="margin-top: 0.3rem; font-size: 0.9rem; color: #6f6259;">
+            内容方向：日常查询与对照 · 生成标识：51e05bebe0d29b81（内部变体）
+        </p>
+
+    </div>
+</body>
+</html>
