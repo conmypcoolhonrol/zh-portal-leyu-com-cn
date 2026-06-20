@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壹号娱乐 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f4fafc;
+            color: #1a2e3b;
+            line-height: 1.6;
+            padding: 24px 16px;
+        }
+
+        .container {
+            max-width: 1040px;
+            margin: 0 auto;
+        }
+
+        /* 网格背景装饰 */
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(0, 160, 150, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 160, 150, 0.04) 1px, transparent 1px);
+            background-size: 36px 36px;
+            border-radius: 28px;
+            padding: 2px;
+        }
+
+        /* hero 区域 */
+        .hero {
+            background: linear-gradient(145deg, #e3f2f1 0%, #cde8e5 100%);
+            border-radius: 24px;
+            padding: 48px 32px 40px;
+            margin-bottom: 36px;
+            box-shadow: 0 6px 18px rgba(0, 100, 100, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #00b3a0 0%, transparent 70%);
+            opacity: 0.08;
+            top: -50px;
+            right: -40px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0d3d3a;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 700px;
+            color: #29534e;
+        }
+
+        .hero .sub {
+            margin-top: 18px;
+            display: inline-block;
+            background: rgba(0, 160, 150, 0.12);
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #0f5b55;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        @media (min-width: 580px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 860px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 22px;
+            box-shadow: 0 4px 12px rgba(0, 80, 70, 0.04);
+            border: 1px solid #d8edeb;
+            transition: box-shadow 0.2s ease, transform 0.15s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 130, 120, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            display: block;
+            color: #009688;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #0a443f;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #2f4b47;
+        }
+
+        .card .tag {
+            display: inline-block;
+            margin-top: 14px;
+            background: #e2f3f0;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #007b6e;
+        }
+
+        /* 横向卡片（场景） */
+        .scene-card {
+            background: white;
+            border-radius: 20px;
+            padding: 28px 28px;
+            margin: 32px 0;
+            border: 1px solid #d8edeb;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .scene-card .text {
+            flex: 2;
+            min-width: 240px;
+        }
+
+        .scene-card .stat {
+            flex: 1;
+            min-width: 160px;
+            background: #f0f8f6;
+            padding: 18px 20px;
+            border-radius: 18px;
+        }
+
+        .scene-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0a443f;
+            margin-bottom: 10px;
+        }
+
+        .scene-card .stat p {
+            font-size: 0.9rem;
+            color: #1c4b45;
+        }
+
+        .scene-card .stat .num {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #00897b;
+            line-height: 1.2;
+        }
+
+        /* 提示框 */
+        .tip-box {
+            background: #e3f4f1;
+            border-left: 4px solid #009688;
+            padding: 20px 24px;
+            border-radius: 14px;
+            margin: 32px 0;
+            font-size: 0.95rem;
+            color: #1b423e;
+        }
+
+        .tip-box strong {
+            color: #006b60;
+        }
+
+        /* FAQ 摘要 */
+        .faq-section {
+            margin: 36px 0 20px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0d3d3a;
+            margin-bottom: 18px;
+        }
+
+        .faq-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #d0e7e3;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #105a53;
+            margin-bottom: 4px;
+            font-size: 0.98rem;
+        }
+
+        .faq-a {
+            color: #2b5b55;
+            font-size: 0.92rem;
+            padding-left: 4px;
+        }
+
+        /* 链接装饰 */
+        a {
+            color: #007b6e;
+            text-decoration: none;
+            border-bottom: 1px dotted #99cbc3;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid #006b60;
+            color: #006359;
+        }
+
+        .footer {
+            margin-top: 48px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6a908a;
+            border-top: 1px solid #d0e7e3;
+            padding-top: 28px;
+        }
+
+        /* 移动端微调 */
+        @media (max-width: 460px) {
+            .hero {
+                padding: 32px 20px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .card {
+                padding: 22px 18px;
+            }
+            .scene-card {
+                padding: 22px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="grid-bg">
+        <div class="hero">
+            <h1>壹号娱乐 · 产品说明</h1>
+            <p>从日常查询到延伸阅读，<a href="https://m-home-1hao.com">壹号娱乐</a> 围绕信息对照与场景化使用，整理出一组清晰的功能构成。以下从摘要、亮点、使用建议与注意事项四个维度展开。</p>
+            <div class="sub">基于知识型内容 · 持续迭代</div>
+        </div>
+    </div>
+
+    <!-- 卡片网格：亮点 -->
+    <div class="card-grid">
+        <div class="card">
+            <span class="icon">📋</span>
+            <h3>对照式浏览</h3>
+            <p>条目与分类并排呈现，方便快速比对不同栏目下的内容差异。适合需要平行查阅多个信息块的用户。</p>
+            <span class="tag">快速定位</span>
+        </div>
+        <div class="card">
+            <span class="icon">🧩</span>
+            <h3>模块化结构</h3>
+            <p>每个功能区域独立成块，减少跳转层级。在移动端下依然保持清晰的视觉分层，不压缩核心信息。</p>
+            <span class="tag">响应式布局</span>
+        </div>
+        <div class="card">
+            <span class="icon">📎</span>
+            <h3>延伸阅读入口</h3>
+            <p>在内容段落中嵌入可追溯的链接，方便从当前主题进一步跳转到相关说明或索引页，形成阅读闭环。</p>
+            <span class="tag">知识链接</span>
+        </div>
+    </div>
+
+    <!-- 场景卡片：使用建议 -->
+    <div class="scene-card">
+        <div class="text">
+            <h4>使用建议 · 日常场景</h4>
+            <p>如果你经常需要查询分类信息或对照不同条目，<a href="https://m-home-1hao.com">壹号娱乐</a> 的页面结构可以帮助减少反复返回列表的操作。建议在以下情境中尝试：</p>
+            <ul style="padding-left: 20px; margin-top: 12px; color: #1c4b45;">
+                <li style="margin-bottom: 6px;">需要同时阅读多个相关条目时，利用页面内的对照布局平行展开。</li>
+                <li style="margin-bottom: 6px;">延伸阅读：段落中的链接指向更详细的说明，适合深度了解某一分类。</li>
+                <li>在移动设备上，卡片与网格会自动调整间距，无需缩放即可浏览。</li>
+            </ul>
+        </div>
+        <div class="stat">
+            <p><span class="num">~6</span> 个主要模块</p>
+            <p style="margin-top: 10px;"><span class="num">3</span> 种布局变体</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">基于内容密度动态适配</p>
+        </div>
+    </div>
+
+    <!-- 提示：可信但克制 -->
+    <div class="tip-box">
+        <strong>📌 访问说明</strong><br>
+        本页面提供客观的功能介绍与使用参考。<a href="https://m-home-1hao.com">壹号娱乐</a> 所呈现的内容均基于公开信息与功能设计，不包含对任何结果的承诺。请根据自身需求合理使用，并留意内容更新日期。
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-section">
+        <h2>常见疑问 · 摘要</h2>
+        <div class="faq-item">
+            <div class="faq-q">❓ 适合哪些用户？</div>
+            <div class="faq-a">日常需要查询比对信息、关注分类索引的用户，以及希望通过延伸阅读了解背景的人群。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">❓ 是否需要注册？</div>
+            <div class="faq-a">本页面仅作为产品说明展示，不涉及注册流程。具体功能以 <a href="https://m-home-1hao.com">壹号娱乐</a> 实际页面为准。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">❓ 内容多久更新？</div>
+            <div class="faq-a">模块与条目会基于信息结构不定期调整，建议定期浏览以获取最新对照内容。</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>产品说明页面 · 知识型介绍 · 版本 2025</p>
+        <p style="margin-top: 4px; opacity: 0.7;">理性浏览 · 信息仅供参考</p>
+    </div>
+</div>
+</body>
+</html>
