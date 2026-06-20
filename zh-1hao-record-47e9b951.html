@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壹号娱乐 · 简明指南</title>
+  <style>
+    /* reset & base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 100%; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+      background: #fbfbfb;
+      color: #1e1e1e;
+      line-height: 1.65;
+      padding: 0 1.25rem;
+    }
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.4rem 0 4rem 0;
+    }
+
+    /* typography */
+    h1, h2, h3 {
+      font-weight: 550;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+    h1 { font-size: 2.1rem; margin-bottom: 0.4rem; }
+    h2 { font-size: 1.5rem; margin: 2.6rem 0 1rem 0; padding-top: 0.2rem; border-bottom: 2px solid #eaeaea; padding-bottom: 0.4rem; }
+    h3 { font-size: 1.2rem; margin: 1.6rem 0 0.6rem 0; }
+    p, li { margin-bottom: 0.9rem; color: #2c2c2c; }
+    a { color: #1f4e8c; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.15s; }
+    a:hover, a:focus { border-bottom-color: #1f4e8c; outline: none; }
+    strong { font-weight: 550; color: #0f0f0f; }
+
+    /* hero section */
+    .hero {
+      background: #f2f3f5;
+      border-radius: 20px;
+      padding: 2.8rem 2.2rem;
+      margin-bottom: 0.8rem;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .hero h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+    .hero .sub { font-size: 1.1rem; color: #3d3d3d; max-width: 480px; margin: 0.5rem auto 0; }
+
+    /* card list / advantage */
+    .advantage-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.8rem 0 1rem;
+    }
+    .advantage-card {
+      flex: 1 1 200px;
+      background: #ffffff;
+      border: 1px solid #e7e7e7;
+      border-radius: 16px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      transition: box-shadow 0.2s;
+    }
+    .advantage-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+    .advantage-card h3 { margin-top: 0; font-weight: 530; font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .advantage-card p { font-size: 0.95rem; margin-bottom: 0; color: #3b3b3b; }
+
+    /* faq style */
+    .faq-item {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+      border: 1px solid #ececec;
+    }
+    .faq-q {
+      font-weight: 550;
+      margin-bottom: 0.35rem;
+      font-size: 1.05rem;
+    }
+    .faq-a {
+      color: #3a3a3a;
+      margin-bottom: 0;
+    }
+
+    /* footer & misc */
+    .footer-line {
+      margin-top: 3rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid #e2e2e2;
+      font-size: 0.9rem;
+      color: #5a5a5a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .footer-line a { color: #2d4e75; }
+
+    .note-box {
+      background: #f7f8fa;
+      border-left: 4px solid #94a3b8;
+      padding: 1.2rem 1.4rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.6rem 0;
+    }
+
+    .inline-link-wrap {
+      background: #f5f5f5;
+      padding: 0.4rem 0.7rem;
+      border-radius: 30px;
+      display: inline-block;
+      margin: 0.2rem 0;
+    }
+
+    hr { border: none; border-top: 1px solid #eaeaea; margin: 2.4rem 0; }
+
+    @media (max-width: 480px) {
+      body { padding: 0 1rem; }
+      .page { padding: 1.6rem 0 3rem; }
+      .hero { padding: 2rem 1.2rem; }
+      .hero h1 { font-size: 2rem; }
+      .advantage-grid { gap: 0.9rem; }
+      .footer-line { flex-direction: column; gap: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>壹号娱乐</h1>
+    <div class="sub">一份简明的访问指南与常见说明</div>
+  </div>
+
+  <!-- 简明定位 -->
+  <p style="margin-top: 1.2rem;"><a href="https://zh-1hao.com">壹号娱乐</a> 是一个提供线上休闲互动服务的平台。本页整理了基本的使用思路、平台特点以及访问时值得留意的几点事项，适合第一次接触的朋友参考。</p>
+
+  <!-- 优势区 -->
+  <h2>平台特点</h2>
+  <div class="advantage-grid">
+    <div class="advantage-card">
+      <h3>直观界面</h3>
+      <p>页面结构清晰，功能入口明确，减少学习成本。常用模块均可在首页快速定位。</p>
+    </div>
+    <div class="advantage-card">
+      <h3>常规更新</h3>
+      <p>内容与活动保持阶段性调整，以适应不同时期的使用需求。建议留意站内公告栏。</p>
+    </div>
+    <div class="advantage-card">
+      <h3>基础指引</h3>
+      <p>每个主要功能都配有简短说明，帮助新用户理解操作路径。遇到疑问可先查看帮助区。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：简明指南 -->
+  <h2>简明指南</h2>
+  <p>使用 <a href="https://zh-1hao.com">壹号娱乐</a> 的流程通常围绕三个步骤展开：</p>
+  <ul style="margin-left: 1.6rem; padding-left: 0.2rem;">
+    <li><strong>了解分类</strong> — 浏览首页或导航栏，查看你感兴趣的版块。</li>
+    <li><strong>关注更新</strong> — 部分内容会按周期调整，可定期查看首页最新信息。</li>
+    <li><strong>确认网络</strong> — 确保你的设备可以稳定访问平台，避免因网络波动影响体验。</li>
+  </ul>
+  <div class="note-box">
+    <strong>访问提醒：</strong> 建议使用最新版本的浏览器（Chrome、Edge、Safari 等），并保持系统时间正确。如果遇到页面加载异常，可以先清理缓存或尝试切换网络环境。
+  </div>
+
+  <!-- 场景说明 -->
+  <h2>常见使用场景</h2>
+  <p>不论你是初次接触，还是有一定经验，下面几个场景可能对你有所帮助：</p>
+  <ul style="margin-left: 1.6rem; padding-left: 0.2rem;">
+    <li><strong>日常浏览</strong> — 通过首页快速查看推荐内容与活动入口。</li>
+    <li><strong>功能探索</strong> — 每个主要页面均有标题与简要描述，可逐步熟悉布局。</li>
+    <li><strong>问题排查</strong> — 如果发现某些页面显示不全，先检查是否开启了广告拦截插件或代理工具。</li>
+  </ul>
+  <p>需要再次确认平台地址时，可以直接访问 <span class="inline-link-wrap"><a href="https://zh-1hao.com">壹号娱乐</a></span>，请认准完整域名。</p>
+
+  <!-- FAQ 摘要 -->
+  <h2>FAQ 摘要</h2>
+  <div class="faq-item">
+    <div class="faq-q">问：网站是否支持手机访问？</div>
+    <div class="faq-a">支持。移动端浏览器访问会自动适配屏幕尺寸，布局与功能均保持可用。若遇到排版问题，可尝试横竖屏切换。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">问：需要注册或登录吗？</div>
+    <div class="faq-a">部分内容无需登录即可查看，但参与特定互动或使用个性化功能可能需要注册账号。具体以页面提示为准。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">问：页面加载缓慢怎么办？</div>
+    <div class="faq-a">先检查本地网络连接，关闭不必要的后台应用。部分地区的网络服务商可能对境外站点有限制，可尝试更换 DNS 或使用合规的网络优化方式。</div>
+  </div>
+
+  <!-- 额外提醒 -->
+  <div style="background: #fafafa; border-radius: 14px; padding: 1.2rem 1.4rem; margin: 1.8rem 0;">
+    <p style="margin-bottom: 0.4rem;"><strong>请留意</strong></p>
+    <p style="margin-bottom: 0;">平台不会通过非官方渠道要求用户提供敏感信息。访问时请注意保护个人隐私，避免在公共设备上记住密码。如有任何异常，请通过站内联系方式反馈。</p>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-line">
+    <span>内容整理 · 仅供参考</span>
+    <span><a href="https://zh-1hao.com">壹号娱乐</a></span>
+  </div>
+</div>
+</body>
+</html>
